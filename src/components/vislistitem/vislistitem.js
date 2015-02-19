@@ -16,6 +16,7 @@ angular.module('vleApp')
         chart: '=',
         fieldSet: '=', //optional
         isSelected: '=', //optional
+        isInList: '=', //optional
         highlighted: '=', //optional
         showExpand: '=', //optional
         expandAction: '&' //optional

@@ -19,6 +19,10 @@ angular.module('facetedviz')
         scope.shorthands = vl.field.shorthands;
         scope.limit = consts.numInitClusters;
 
+        scope.isInList = function(chart) {
+          return chart.fieldSetKey in Visrec.chartClusters;
+        };
+
         scope.increaseLimit = function() {
           if(scope.limit + consts.numMoreClusters > Visrec.numClustersGenerated) {
             Visrec.update.clusters(scope.limit + consts.numMoreClusters);

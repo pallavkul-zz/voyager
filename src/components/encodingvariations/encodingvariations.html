@@ -23,6 +23,7 @@
         <div class="card abs-100 scroll-xy">
           <vl-plot vg-spec="selectedSubcluster[0].vgSpec"
             encoding="selectedSubcluster[0].encoding"
+            disabled="!Visrec.selectedCluster"
           >
           </vl-plot>
           <div>
@@ -53,6 +54,7 @@
               ng-repeat="subcluster in Visrec.selectedCluster"
               ng-if="selectedSubcluster != subcluster"
               chart="subcluster[0]"
+              is-in-list="isInList"
               show-expand="true"
               expand-action="select(subcluster)"
             >

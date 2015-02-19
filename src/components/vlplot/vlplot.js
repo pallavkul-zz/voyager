@@ -19,7 +19,8 @@ angular.module('vleApp')
       scope: {
         'vgSpec':'=',
         'encoding': '=',
-        'maxHeight':'='
+        'maxHeight':'=',
+        'disabled': '='
       },
       replace: true,
       link: function(scope, element) {
@@ -42,6 +43,11 @@ angular.module('vleApp')
           var shorthand = scope.encoding ? scope.encoding.toShorthand() : '';
 
           scope.renderer = getRenderer(spec);
+
+          if(scope.disabled) {
+            console.log('parsing spec', shorthand, 'disabled');
+            return;
+          }
 
           vg.parse.spec(spec, function(chart) {
             var endParse = new Date().getTime();
