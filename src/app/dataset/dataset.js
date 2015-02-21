@@ -52,6 +52,10 @@ var datasets = [{
   name: "Campaigns",
   url: "data/weball26.json",
   table: 'weball26_json'
+},{
+  name: "Virus",
+  url: "data/virus.json",
+  table: 'virus_json'
 }];
 
 function getNameMap(dataschema) {
