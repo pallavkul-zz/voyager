@@ -23,10 +23,13 @@ else
   exit 1
 fi
 
+# 1. BOWER PUBLISH
+
+# read version
 gitsha=$(git rev-parse HEAD)
 version=$(cat package.json | jq .version | sed -e 's/^"//'  -e 's/"$//')
 
-git clone git@github.com:uwdata/voyager.git gh-pages
+git clone https://github.com/vivekratnavel/voyager.git gh-pages
 cd gh-pages
 git checkout gh-pages
 cd ..
@@ -36,6 +39,11 @@ mv gh-pages/.git dist
 rm -rf gh-pages
 cd dist
 git add .
-git commit -am "release version=$version gitsha=$gitsha"
-git push
+
+git commit -m "release $version $gitsha"
+git tag -am "Release v$version." "v$version"
+
+# now swap back to the clean master and push the new tag
+git push --tags
+git checkout master
 cd ..
