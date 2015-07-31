@@ -7,7 +7,7 @@
  * # encodingVariations
  */
 angular.module('voyager')
-  .directive('encodingVariations', function (Visrec, Bookmarks, consts, $document, _, Logger) {
+  .directive('encodingVariations', function (Visrec, consts, $document, _, Logger) {
 
     return {
       templateUrl: 'components/encodingvariations/encodingvariations.html',
@@ -16,7 +16,6 @@ angular.module('voyager')
       scope: {},
       link: function postLink(scope/*, element, attrs*/) {
         scope.Visrec = Visrec;
-        scope.Bookmarks = Bookmarks;
         scope.consts = consts;
         scope._ = _;
 

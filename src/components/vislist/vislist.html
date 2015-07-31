@@ -26,7 +26,7 @@
         is-in-list="isInList"
 
         field-set="fieldSet"
-        show-bookmark="true"
+        show-bookmark="false"
         show-debug="consts.debug && consts.debugInList"
         show-expand="true"
         show-filter-null="true"
@@ -38,8 +38,9 @@
         is-selected="Fields.isSelected"
         highlighted="Fields.highlighted"
         expand-action="select(fieldSet, cluster, $index)"
-
+        chart-type="bar"
         priority="consts.priority.vislist + $index"
+        rendering="rendering"
       >
       </vl-plot-group>
     </div>
@@ -76,15 +77,16 @@
       field-set="fieldSet"
       is-selected="Fields.isSelected"
       highlighted="Fields.highlighted"
-      show-bookmark="true"
+      show-bookmark="false"
       show-debug="consts.debug && consts.debugInList"
       show-expand="true"
       show-filter-null="true"
       show-sort="true"
       overflow="true"
       tooltip="true"
-
+      chart-type="bar"
       expand-action="select(fieldSet, cluster, $index)"
+      rendering="rendering"
     >
     </vl-plot-group>
   </div>

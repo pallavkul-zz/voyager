@@ -4,10 +4,10 @@
 angular.module('voyager', ['vlui',
     'zeroclipboard',
     '720kb.tooltips',
-    'LocalStorageModule',
+
     'ngOrderObjectBy',
-    'angular-websql',
-    'Chronicle',
+
+
     'ngCookies',
     'ngTouch',
     'ngSanitize',

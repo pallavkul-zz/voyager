@@ -19,6 +19,8 @@ angular.module('voyager')
         scope.consts = consts;
         scope.shorthands = vl.field.shorthands;
         scope.limit = consts.numInitClusters;
+        // Flag to show loading spinner when the chart is rendered
+        scope.rendering = false;
 
         element.bind('scroll', function(){
            if(jQuery(this).scrollTop() + jQuery(this).innerHeight() >= jQuery(this)[0].scrollHeight){
